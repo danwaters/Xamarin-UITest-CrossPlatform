@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D6CC904-886A-4B00-90DF-999FE1157DA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamStore.XPlat.Tests</RootNamespace>
+    <AssemblyName>XamStore.XPlat.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.0.6.6\lib\Xamarin.UITest.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.cs" />
+    <Compile Include="Pages\iOS\MainPageiOS.cs" />
+    <Compile Include="Pages\IMainPage.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\Android\MainPageAndroid.cs" />
+    <Compile Include="Pages\IOptionsPage.cs" />
+    <Compile Include="Pages\iOS\OptionsPageiOS.cs" />
+    <Compile Include="Pages\ShippingPage.cs" />
+    <Compile Include="Pages\iOS\ShippingPageiOS.cs" />
+    <Compile Include="Pages\Android\OptionsPageAndroid.cs" />
+    <Compile Include="Pages\Android\ShippingPageAndroid.cs" />
+    <Compile Include="ContainerConfig.cs" />
+    <Compile Include="PagePlatform.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="ApiKey.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="com.xamarin.XamStore.apk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+</Project>
